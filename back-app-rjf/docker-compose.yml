@@ -15,8 +15,8 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
     volumes:
-      - /mnt/c/works/study/React-jsonschema-form/mongodb/configdb:/data/configdb
-      - /mnt/c/works/study/React-jsonschema-form/mongodb/initdb:/docker-entrypoint-initdb.d
+      - ./mongodb/configdb:/data/configdb
+      - ./mongodb/initdb:/docker-entrypoint-initdb.d
       - mongoDataStore:/data/db
 
   mongo-express:
