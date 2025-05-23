@@ -19,7 +19,7 @@
 
 - Docker および Docker Compose
 - Java 17
-- Gradle
+- **Maven**
 
 ### 1. MongoDB の起動
 
@@ -37,7 +37,13 @@ docker-compose up -d
 以下のコマンドを実行してアプリケーションをビルドし、起動します。
 
 ```sh
-./gradlew bootRun
+./mvnw spring-boot:run
+```
+
+または Maven がインストール済みの場合は
+
+```sh
+mvn spring-boot:run
 ```
 
 アプリケーションは `http://localhost:8080` で起動します。
@@ -57,7 +63,7 @@ MongoDB の初期データとして、以下の JSON Schema が登録されま�
 MongoDB のデータは以下の手順で確認できます。
 
 1. ブラウザで `http://localhost:8081` にアクセスします。
-2. ユーザー名: `root`、パスワード: `example` を使用してログインします。
+2. ユーザー名: `admin`、パスワード: `pass` を使用してログインします。
 3. データベース `formdb` 内のコレクション `formschema` や `formdata` を確認できます。
 
 ---
@@ -67,7 +73,7 @@ MongoDB のデータは以下の手順で確認できます。
 - **バックエンド**: Spring Boot
 - **データベース**: MongoDB
 - **言語**: Java 17
-- **ビルドツール**: Gradle
+- **ビルドツール**: Maven
 - **コンテナ**: Docker, Docker Compose
 
 ---
@@ -78,7 +84,7 @@ MongoDB のデータは以下の手順で確認できます。
 back-app-rjf/
 ├── src/                     # ソースコード
 ├── mongodb/                 # MongoDB の初期データと設定
-├── build.gradle             # Gradle ビルド設定
+├── pom.xml                  # Maven ビルド設定
 ├── docker-compose.yml       # Docker Compose 設定
 └── README.md                # このファイル
 ```
